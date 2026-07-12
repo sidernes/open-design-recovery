@@ -20,7 +20,9 @@ else
   mkdir -p "$WORKSPACE_ROOT"
   git init -q "$UPSTREAM_DIR"
   git -C "$UPSTREAM_DIR" remote add origin "$url"
-  git -C "$UPSTREAM_DIR" fetch --depth 1 --filter=blob:none origin "$commit"
+  # Fetch one complete snapshot. Avoid a blobless checkout: repositories with
+  # thousands of assets can otherwise trigger a long deferred-object fetch.
+  git -C "$UPSTREAM_DIR" fetch --depth 1 origin "$commit"
   git -C "$UPSTREAM_DIR" checkout -q --detach "$commit"
 fi
 
