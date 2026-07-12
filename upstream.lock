@@ -1,0 +1,5 @@
+[upstream]
+	url = https://github.com/nexu-io/open-design.git
+	commit = 3f4fd58937538cd0588432abef5a24baf488a9e7
+	version = 0.8.1
+	captured = 2026-07-11

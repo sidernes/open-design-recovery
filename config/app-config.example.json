@@ -1,0 +1,7 @@
+{
+  "telemetry": {
+    "metrics": false,
+    "content": false
+  },
+  "onboardingCompleted": false
+}
